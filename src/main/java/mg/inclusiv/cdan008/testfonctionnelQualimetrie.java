@@ -86,7 +86,8 @@ public class testfonctionnelQualimetrie {
         descriptionTask.sendKeys("test");
         waitFonction(4000);
         btnModal.click();
-
+        waitFonction(4000);
+        chromedriver.navigate().refresh();
         waitFonction(4000);
         /* Changer Etat tache */
         WebElement checkBoxEtatTache = chromedriver.findElement(By.xpath("/html/body/div[1]/table/tbody/tr/td[3]/input"));
@@ -100,6 +101,8 @@ public class testfonctionnelQualimetrie {
 
         btnModifier.click();
         waitFonction(2000);
+        chromedriver.findElement(By.xpath("//*[@id=\"titreinputModal\"]")).clear();
+        chromedriver.findElement(By.xpath("//*[@id=\"descriptiontextAreaTacheModal\"]")).clear();
         chromedriver.findElement(By.xpath("//*[@id=\"titreinputModal\"]")).sendKeys("bonjour test");
         chromedriver.findElement(By.xpath("//*[@id=\"descriptiontextAreaTacheModal\"]")).sendKeys("test test");
         waitFonction(2000);
